@@ -446,3 +446,18 @@ setInterval(spawnPedestrian, 4000);
 updateScene();
 cycleTopLight();
 cycleBottomLight();
+
+// ================= LOADING SCREEN LOGIC =================
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    
+    // Wait 2.5 seconds (matching the CSS animation), then fade out
+    setTimeout(() => {
+        loadingScreen.classList.add('hidden');
+        // Optional: Remove the element entirely after fade out to save memory
+        setTimeout(() => loadingScreen.remove(), 500);
+    }, 2500);
+});
+
+// ================= 1. UI & TAB LOGIC =================
+// ... (The rest of your script.js code continues below as normal)

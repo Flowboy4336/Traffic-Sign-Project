@@ -247,3 +247,83 @@ input:checked + .slider:before { transform: translateX(26px); background-color: 
     font-size: 0.9rem; line-height: 1.5;
 }
 .info-text strong { color: var(--primary); }
+
+/* ================= LOADING SCREEN ================= */
+#loading-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.loader-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loader-logo {
+    width: 80px; height: 80px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 2px solid #22c55e;
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2.5rem; color: #22c55e;
+    margin-bottom: 1.5rem;
+    animation: pulseLogo 1.5s infinite alternate;
+}
+@keyframes pulseLogo {
+    from { box-shadow: 0 0 10px rgba(34, 197, 94, 0.3); transform: scale(1); }
+    to { box-shadow: 0 0 30px rgba(34, 197, 94, 0.6); transform: scale(1.05); }
+}
+.loader-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+.loader-content p {
+    color: #a1a1aa;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    font-family: monospace;
+}
+.loader-bar {
+    width: 250px;
+    height: 4px;
+    background: #1a1a1a;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.loader-progress {
+    width: 0%;
+    height: 100%;
+    background: #22c55e;
+    box-shadow: 0 0 10px #22c55e;
+    animation: loadProgress 2.5s ease-in-out forwards;
+}
+@keyframes loadProgress {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+/* HIDDEN CLASS FOR SMOOTH TRANSITION */
+.main-content-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.main-content-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

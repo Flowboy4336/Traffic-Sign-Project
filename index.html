@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TSR System | Autonomous Vehicle Assistant</title>
+    
+    <!-- FAVICON (Green Car encoded in Base64) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2322c55e'%3E%3Cpath d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z'/%3E%3C/svg%3E">
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,6 +15,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- ================= LOADING SCREEN ================= -->
+    <div id="loading-screen">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h1>TSR SYSTEM</h1>
+            <p>Initializing Autonomous Assistant...</p>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- MOBILE HEADER -->
     <div class="mobile-header">
@@ -46,7 +64,7 @@
     </aside>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content">
+    <main class="main-content" id="main-content">
         <header class="top-header">
             <div>
                 <h2 id="page-title">Live Dashboard</h2>
@@ -62,7 +80,7 @@
         <!-- ================= TAB 1: DASHBOARD ================= -->
         <section id="tab-dashboard" class="tab-content active">
             
-            <!-- NEW DESCRIPTION BANNER -->
+            <!-- DESCRIPTION BANNER -->
             <div class="info-banner mb-6">
                 <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
                 <div class="info-text">
